@@ -20,6 +20,12 @@ Meteor.methods({
             return 0;
         });
         addAgeScoreToWards(wardRanking, wardAgeTotal);
+
+        for(var i=0; i > wards.length; i++){
+            findTotalPopScore(wards[i], searchParams.totalPopulation, wardRanking);
+        }
+
+        return wardRanking;
     }
 });
 
@@ -198,11 +204,30 @@ var addAgeScoreToWards = function (wardRanking, wardAgeTotal) {
     }
 };
 
-
 var findGenderScore = function () {
 
 };
 
-var findTotalPopScore = function () {
+var findTotalPopScore = function (ward, population, rankings) {
+    var delta = ward.TotalPopulation - population;
+    var score = 0;
+    if(delta < -540){
+        score = -3
+    }else if (delta >= -539 && delta <= -360){
+        score = -2;
+    }else if (delta >= 359 && delta <= -180 ){
+        score = 0;
+    }else if(delta >= -179 && delta <= 180){
+        score = 1;
+    }else if(delta > 181 && delta <= 360){
+        score = 3;
+    }else if (delta > 360){
+        score = 3;
+    }
 
+    rankings.filter(function (obj) {
+        if(obj.WardNo == ward.WardNo){
+            obj.wardScore += score;
+        }
+    });
 };
