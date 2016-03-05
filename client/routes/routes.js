@@ -23,14 +23,14 @@ Router.route('currentLocation', {
     }
 });
 
-Router.route('wardStatistics', {
+Router.route('wardStatistics/:wardNo', {
     name: "wardStatistics",
     template: "wardStatistics",
     waitOn: function () {
 
     },
     data: function () {
-
+        return Wards.findOne({WardNo:parseInt(this.params.wardNo)});
     }
 });
 
