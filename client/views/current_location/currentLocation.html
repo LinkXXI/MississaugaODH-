@@ -1,0 +1,52 @@
+<template name="currentLocation">
+    <div>
+        <form>
+            <div>
+                <h1>Know your ward?</h1>
+            </div>
+            <div>
+                <p>Ward</p>
+                <select>
+                    <option value="1">Ward 1</option>
+                    <option value="2">Ward 2</option>
+                    <option value="3">Ward 3</option>
+                    <option value="4">Ward 4</option>
+                    <option value="5">Ward 5</option>
+                    <option value="6">Ward 6</option>
+                    <option value="7">Ward 7</option>
+                    <option value="8">Ward 8</option>
+                    <option value="9">Ward 9</option>
+                    <option value="10">Ward 10</option>
+                    <option value="11">Ward 11</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Go!</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <form>
+            <div>
+                <h1>Don't know your ward?</h1>
+            </div>
+            <div>
+                <p>Street Address</p>
+                <input type="text" />
+            </div>
+            <div>
+                <p>Postal Code [X1X1X1]</p>
+                <input type="text" maxlength="6"/>
+            </div>
+            <div>
+                <p>City</p>
+                <select disabled>
+                    <option value="Mississauga">Mississauga</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Go!</button>
+            </div>
+        </form>
+    </div>
+</template>
