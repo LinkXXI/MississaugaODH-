@@ -1,5 +1,5 @@
 Template.whereToGo.events({
-    "form submit": function (e, template){
+    "submit form": function (e, template){
         e.preventDefault();
 
         var searchParams = {};
