@@ -1,13 +1,26 @@
 <template name="whichWardIsBest">
     <div id="loading">
-            <div style="margin-left: auto; margin-right: auto; width: 500px; text-align: center;">
-                <h1>Compiling your Results!</h1>
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
+        <div style="margin-left: auto; margin-right: auto; width: 500px; text-align: center;">
+            <h1>Compiling your Results!</h1>
+            <div class="progress">
+                <div class="indeterminate"></div>
             </div>
+        </div>
     </div>
-    <div id="ranking" style="display: none">
-
+    <div id="ranking" class="hidden">
+        <div>
+            <h4>Here are the best three wards for you based on your requirements.</h4>
+            <ol>
+                <li>
+                    <p>Ward {{suggestedWard 1}}</p>
+                </li>
+                <li>
+                    <p>Ward {{suggestedWard 2}}</p>
+                </li>
+                <li>
+                    <p>Ward {{suggestedWard 3}}</p>
+                </li>
+            </ol>
+        </div>
     </div>
 </template>
