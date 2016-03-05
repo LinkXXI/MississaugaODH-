@@ -25,6 +25,16 @@ Meteor.methods({
             findTotalPopScore(wards[i], searchParams.totalPopulation, wardRanking);
         }
 
+        wardRanking.sort(function(a, b){
+            if(a.wardScore > b.wardScore){
+                return 1;
+            }
+            if(a.wardScore < b.wardScore){
+                return -1;
+            }
+            return 0;
+        })
+
         return wardRanking;
     }
 });

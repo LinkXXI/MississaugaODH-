@@ -12,5 +12,7 @@ Template.whichWardIsBest.rendered = function () {
         }
         Session.set('suggestedWards', data);
         console.log(data);
+        $('#loading').addClass('hidden');
+        $('#ranking').removeClass('hidden');
     })
 };
