@@ -45,9 +45,9 @@ Router.route('whereToGo', {
     }
 });
 
-Router.route('displayWhereToGo', {
-    name: "displayWhereToGo",
-    template: "displayWereToGo",
+Router.route('whichWardIsBest', {
+    name: "whichWardIsBest",
+    template: "whichWardIsBest",
     waitOn: function () {
 
     },
