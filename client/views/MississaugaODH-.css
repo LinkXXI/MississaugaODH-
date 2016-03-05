@@ -14,11 +14,11 @@
 }
 
 #container {
-    margin-top: 10%;
+    margin-top: 15%;
 }
 
 #container2 {
-    margin-top: 5%;
+    margin-top: 15%;
     font-family: "Times New Roman", Times, serif;
 }
 
@@ -30,4 +30,13 @@
 #container4 {
     font-size: 1.5em;
     font-family: "Times New Roman", Times, serif;
+}
+
+
+#border{
+    border:thick solid #f1661b;
+}
+
+#border2{
+    border:thick solid #f1661b;
 }
