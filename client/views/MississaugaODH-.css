@@ -1,1 +1,33 @@
 /* CSS declarations go here */
+
+
+/*****************************************/
+
+#header {
+    background: #f1661b;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 5em;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#container {
+    margin-top: 10%;
+}
+
+#container2 {
+    margin-top: 5%;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#container3 {
+    font-size: 2.5em;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#container4 {
+    font-size: 1.5em;
+    font-family: "Times New Roman", Times, serif;
+}
