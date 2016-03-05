@@ -8,10 +8,70 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12">
-                    <div id="slider">
+                <div class="col s12 m6">
+                    <label for="fromAge">Between</label>
+                    <input type="number" id="fromAge"/>
+                </div>
+                <div class="col s12 m6">
+                    <label for="toAge">And</label>
+                    <input type="number" id="toAge"/>
+                </div>
+            </div>
 
-                    </div>
+            <!-- === INCOME === -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>Income</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                    <label for="fromIncome">Between</label>
+                    <input type="number" id="fromIncome"/>
+                </div>
+
+                <div class="col s12 m6">
+                    <label for="toIncome">And</label>
+                    <input type="number" id="toIncome"/>
+                </div>
+            </div>
+
+            <!-- === GENDER === -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>Gender</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="radio" name="gender" id="male" />
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" />
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="ignore" checked/>
+                    <label for="ignore">Not Important</label>
+                </div>
+                <div class="col s12">
+                    <label for="genderPercent">Percentage</label>
+                    <input type="number" id="genderPercent"/>
+                </div>
+            </div>
+
+            <!-- === TOTAL POPULATION === -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>Total Population</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <label for="totalPopulation"></label>
+                    <input type="number" id="totalPopulation" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button class="btn" type="submit">Tell me where to go!</button>
                 </div>
             </div>
         </form>
