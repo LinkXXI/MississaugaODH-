@@ -1,18 +1,29 @@
 Meteor.methods({
-    compileResults: function(searchParams){
+    compileResults: function (searchParams) {
         var wards = Wards.find().fetch();
         var wardRanking = setUpWardRanks();
         var wardAgeTotal = setUpWardAgeTotal();
         var wardIncomeTotal = setUpWardIncomeTotal();
 
-        for(var i = 0; i < wards.length; i++){
-            var wardAgeTotal = findWardAgeScore(wards[i].Gender.Male, searchParams.ageRange[0], searchParams.ageRange[1])
-
+        for (var i = 0; i < wards.length; i++) {
+            var wardTotal = findWardAgeTotal(wards[i].Gender.Male, searchParams.ageRange[0], searchParams.ageRange[1]);
+            wardTotal += findWardAgeTotal(wards[i].Gender.Female, searchParams.ageRange[0], searchParams.ageRange[1]);
+            wardAgeTotal[i].wardAgePop = wardTotal;
         }
+        wardAgeTotal.sort(function (a, b) {
+            if (a.wardAgePop > b.wardAgePop) {
+                return 1;
+            }
+            if (a.wardAgePop < b.wardAgePop) {
+                return -1;
+            }
+            return 0;
+        });
+        addAgeScoreToWards(wardRanking, wardAgeTotal);
     }
 });
 
-var setUpWardRanks = function(){
+var setUpWardRanks = function () {
     return [
         {
             WardNo: 1,
@@ -159,17 +170,32 @@ var setUpWardIncomeTotal = function () {
     ]
 };
 
-var findWardAgeScore = function (genderData, min, max){
-
-};
-
-var isInRange = function(minRange, maxRange, minVal, maxVal){
-    if(minVal > minRange){
-        if( maxVal > maxRange){
-            return true;
+var findWardAgeTotal = function (genderData, min, max) {
+    var ageTotal = 0;
+    for (var i = 0; i < genderData.length; i++) {
+        if (min > genderData[i].min && max > genderData[i].max) {
+            ageTotal += genderData[i].value;
         }
     }
-    return false;
+    return ageTotal;
+};
+
+var addAgeScoreToWards = function (wardRanking, wardAgeTotal) {
+    var score = 3;
+    var iterations = 0;
+
+    for (var i = 0; i < wardAgeTotal.length; i++) {
+        var wardNo = wardAgeTotal[i].WardNo;
+        wardRanking.filter(function (ward) {
+            if (ward.WardNo == wardNo) {
+                ward.wardScore += score;
+            }
+        });
+        if (iterations == 0 || iterations == 2 || iterations == 4 || iterations == 5 || iterations == 7 || iterations == 9) {
+            score -= 1;
+        }
+        iterations++;
+    }
 };
 
 
