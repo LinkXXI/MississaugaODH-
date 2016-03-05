@@ -31,6 +31,22 @@
     font-size: 1.5em;
     font-family: "Times New Roman", Times, serif;
 }
+.wardContainer {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 2em;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#test {
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 25%;
+    height: 50px;
+    text-align: center;
+    font-size: 2.5em;
+}
 
 #border{
     border:thick solid #f1661b;

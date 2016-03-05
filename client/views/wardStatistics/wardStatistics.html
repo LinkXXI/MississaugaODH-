@@ -1,4 +1,41 @@
 <template name="wardStatistics">
-    <h3>Ward {{WardNo}}</h3>
-    <p>Total Population: {{TotalPopulation}}</p>
+    <div id="test">
+        &nbsp;
+    </div>
+
+    <div class="wardContainer">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title ">
+                       <h3 >Ward # {{WardNo}}</h3>
+      <p >Total Population: {{TotalPopulation}}</p>
+                    <br>
+                    <p >Total # of Males: {{Male}}</p>
+                    <div>
+                        <p>Male Break Down</p>
+                        <p >0-4: {{zeroToFourm}}</p>
+                        <p >5-9: {{zeroToFourm}}</p>
+                        <p >10-14: {{zeroToFourm}}</p>
+
+
+
+                    </div>
+
+                    <br>
+                     <p >Total # of Female: {{Female}}</p>
+                     <div>
+                         <p>Female Break Down</p>
+                         <p >0-4: {{zeroToFourf}}</p>
+                         <p >5-9: {{zeroToFourf}}</p>
+                         <p >10-14: {{zeroToFourf}}</p>
+
+
+
+                     </div>
+                    </span>
+            </div>
+
+        </div>
+    </div>
+
 </template>
