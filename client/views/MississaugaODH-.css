@@ -32,6 +32,7 @@
     font-family: "Times New Roman", Times, serif;
 }
 
+<<<<<<< HEAD
 
 #border{
     border:thick solid #f1661b;
@@ -39,4 +40,8 @@
 
 #border2{
     border:thick solid #f1661b;
+=======
+.hidden{
+    display: none;
+>>>>>>> origin/master
 }
